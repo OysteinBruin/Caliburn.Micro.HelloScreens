@@ -59,6 +59,14 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="AppOrig.xaml.cs" />
+    <Compile Include="Settings\SettingsViewModel.cs" />
+    <Compile Include="Shell\ApplicationCloseStrategy.cs" />
+    <Compile Include="Shell\DialogConductorView.xaml.cs" />
+    <Compile Include="Shell\DialogConductorViewModel.cs" />
+    <Compile Include="Shell\MessageBoxViewModel.cs" />
+    <Compile Include="Shell\ScreensBootstrapper.cs" />
+    <Compile Include="Shell\ShellViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Customers\AddressViewModel.cs" />
@@ -78,6 +86,8 @@
     <Compile Include="Framework\IShell.cs" />
     <Compile Include="Framework\IWorkspace.cs" />
     <Compile Include="Framework\MessageBoxOptions.cs" />
+    <Compile Include="Orders\OrdersWorkspaceViewModel.cs" />
+    <Compile Include="Orders\OrderViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -95,6 +105,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="AppOrig.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -103,13 +114,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Orders\OrdersWorkspace\" />
-    <Folder Include="Resources\" />
-    <Folder Include="Settings\" />
-    <Folder Include="Shell\" />
-  </ItemGroup>
-  <ItemGroup>
+    <Page Include="AppOrig.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Customers\AddressView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -130,9 +140,59 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Orders\OrdersWorkspaceView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Orders\OrdersWorkspace\Detail.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Orders\OrdersWorkspace\Master.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Orders\OrderView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\DefaultStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\NamedStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Settings\SettingsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Shell\DialogConductorView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Shell\MessageBoxView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Shell\ShellView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Customers\Resources\Images\man1-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Orders\Resources\Images\shopping-cart-full48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\backgroundshadow.png" />
+    <Resource Include="Resources\Images\backgroundtexture.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Settings\Resources\report48.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
